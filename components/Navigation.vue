@@ -253,7 +253,7 @@
 
                 <div class="hidden h-full lg:flex">
                   <!-- Flyout menus -->
-                  <PopoverGroup class="inset-x-0 bottom-0 px-4">
+                  <PopoverGroup class="inset-x-0 bottom-0 px-4 z-10">
                     <div class="flex h-full justify-center space-x-8">
                       <Popover
                         v-for="category in navigation.categories"
