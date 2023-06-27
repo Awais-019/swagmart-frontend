@@ -241,14 +241,14 @@
               <div class="flex h-16 items-center justify-between">
                 <!-- Logo (lg+) -->
                 <div class="hidden lg:flex lg:flex-1 lg:items-center">
-                  <a href="#">
+                  <nuxt-link to="/">
                     <span class="sr-only">Your Company</span>
                     <img
                       class="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                       alt=""
                     />
-                  </a>
+                  </nuxt-link>
                 </div>
 
                 <div class="hidden h-full lg:flex">
@@ -309,8 +309,8 @@
                                         class="object-cover object-center"
                                       />
                                     </div>
-                                    <a
-                                      :href="item.href"
+                                    <nuxt-link
+                                      to="/collection"
                                       class="mt-4 block font-medium text-gray-900"
                                     >
                                       <span
@@ -318,7 +318,7 @@
                                         aria-hidden="true"
                                       />
                                       {{ item.name }}
-                                    </a>
+                                    </nuxt-link>
                                     <p aria-hidden="true" class="mt-1">
                                       Shop now
                                     </p>
@@ -448,7 +448,10 @@
   } from "@heroicons/vue/24/outline";
   import { ChevronDownIcon } from "@heroicons/vue/20/solid";
 
+  const response = await useFetchCollections();
+
   const currencies = ["CAD", "USD", "AUD", "EUR", "GBP"];
+
   const navigation = {
     categories: [
       {
